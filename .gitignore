@@ -44,3 +44,5 @@ nul
 # temp files
 tmpclaude-*
 .playwright-mcp/
+
+.vercel
