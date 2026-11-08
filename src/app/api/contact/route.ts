@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { backupFetch } from "../../../lib/inquiry-backup";
 
 async function sendDiscordNotification(name: string, phone: string, message: string) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
@@ -37,7 +38,7 @@ async function sendDiscordNotification(name: string, phone: string, message: str
     ],
   };
 
-  const response = await fetch(webhookUrl, {
+  const response = await backupFetch(webhookUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
